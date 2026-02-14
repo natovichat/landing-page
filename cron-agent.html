@@ -916,9 +916,26 @@
     <p class="cta-disclaimer fade-in" style="margin-top: 20px;">* בהצטרפותכם לקבוצה אתם מאשרים קבלת דיוור ותכנים שיווקיים מ-AI Boost Academy בהמשך. ניתן להסיר את עצמכם בכל עת.</p>
   </section>
 
+  <!-- Technical Overview Section -->
+  <section style="padding: 40px 24px 60px; text-align: center;">
+    <div class="container">
+      <div class="fade-in" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 36px; max-width: 700px; margin: 0 auto;">
+        <span style="font-size: 3rem; display: block; margin-bottom: 16px;">🏗️</span>
+        <h3 style="font-size: 1.3rem; margin-bottom: 12px; font-weight: 700;">רוצים להבין את הארכיטקטורה?</h3>
+        <p style="color: #94a3b8; font-size: 1rem; margin-bottom: 24px; line-height: 1.8;">
+          צפו בסקירה הטכנית של הקונספט - איך הרכיבים מתחברים, מה התהליך, ואילו כלים משתמשים
+        </p>
+        <a href="cron-agent-concept.html" style="display: inline-block; background: linear-gradient(135deg, #4831d4, #00c2ff); color: white; padding: 14px 36px; border-radius: 12px; font-size: 1.05rem; font-weight: 600; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 32px rgba(72,49,212,0.3)'" onmouseout="this.style.transform='none'; this.style.boxShadow='none'">
+          צפו בסקירה הטכנית →
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer>
     <p>הדרכת Cron Agent | יום ראשון 15.2.2026 בשעה 20:30 | חינם ובלי התחייבות</p>
+    <p style="margin-top: 8px; font-size: 0.8rem;"><a href="cron-agent-concept.html" style="color: #64748b; text-decoration: underline;">סקירה טכנית של הקונספט</a></p>
   </footer>
 
   <script>
@@ -930,10 +947,16 @@
       const diff = target - now;
 
       if (diff <= 0) {
-        document.getElementById('days').textContent = '0';
-        document.getElementById('hours').textContent = '0';
-        document.getElementById('minutes').textContent = '0';
-        document.getElementById('seconds').textContent = '0';
+        // Event has started or passed - show "happening now" or "recording available"
+        const countdownEl = document.querySelector('.countdown');
+        if (countdownEl) {
+          const eventEnd = new Date('2026-02-15T22:00:00+02:00').getTime();
+          if (now < eventEnd) {
+            countdownEl.innerHTML = '<div style="text-align:center;"><span style="font-size:1.5rem;color:#34d399;font-weight:700;">🔴 ההדרכה מתקיימת עכשיו!</span></div>';
+          } else {
+            countdownEl.innerHTML = '<div style="text-align:center;"><span style="font-size:1.2rem;color:#a78bfa;font-weight:600;">ההדרכה הסתיימה - הצטרפו לקבוצה לקבלת ההקלטה והעדכונים הבאים</span></div>';
+          }
+        }
         return;
       }
 
