@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>קלינאית תקשורת | טיפול תקשורתי מקצועי</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        nav a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            animation: fadeInUp 1s 0.2s backwards;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1s 0.4s backwards;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Services Section */
+        .services {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 60px;
+            color: #333;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .about h2 {
+            font-size: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .contact h2 {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 60px;
+            color: #333;
+        }
+
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-item {
+            margin: 30px 0;
+            font-size: 20px;
+        }
+
+        .contact-item i {
+            font-size: 30px;
+            margin-left: 15px;
+            color: #667eea;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">🗣️ קלינאית תקשורת</div>
+                <nav>
+                    <a href="#services">שירותים</a>
+                    <a href="#about">אודות</a>
+                    <a href="#contact">צור קשר</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>טיפול תקשורתי מקצועי ואישי</h1>
+            <p>עוזרים לכם למצוא את הקול שלכם ולתקשר בביטחון</p>
+            <a href="#contact" class="cta-button">קבעו פגישת היכרות</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>השירותים שלנו</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">👶</div>
+                    <h3>טיפול בגיל הרך</h3>
+                    <p>טיפול מותאם לילדים בגילאי הרך, מתמקד בפיתוח שפה ותקשורת בסיסית דרך משחק ופעילויות מהנות.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧒</div>
+                    <h3>טיפול בילדים</h3>
+                    <p>שיפור כושר התקשורת, הדיבור והשפה אצל ילדים בגיל בית הספר, עם דגש על ביטחון עצמי.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👨</div>
+                    <h3>טיפול במבוגרים</h3>
+                    <p>שיקום ושיפור תקשורת אצל מבוגרים, כולל טיפול בגמגום, ליקויי קול ובעיות בליעה.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>אודות</h2>
+            <div class="about-content">
+                <p>
+                    אנו מספקים שירותי קלינאות תקשורת מקצועיים ומסורים, עם גישה אישית ומותאמת לכל מטופל.
+                    עם ניסיון רב שנים ומומחיות בתחום, אנו מתמחים בטיפול במגוון רחב של הפרעות תקשורת, דיבור ושפה.
+                </p>
+                <p style="margin-top: 20px;">
+                    המטרה שלנו היא לעזור לכל אדם למצוא את הקול שלו ולתקשר בביטחון ובבהירות,
+                    תוך יצירת סביבה תומכת ומעצימה.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>צור קשר</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    📞 <strong>טלפון:</strong> 050-1234567
+                </div>
+                <div class="contact-item">
+                    📧 <strong>אימייל:</strong> info@communication-clinic.co.il
+                </div>
+                <div class="contact-item">
+                    📍 <strong>כתובת:</strong> רחוב הרצל 123, תל אביב
+                </div>
+                <div style="margin-top: 40px;">
+                    <a href="tel:0501234567" class="cta-button">התקשר עכשיו</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 קלינאית תקשורת | כל הזכויות שמורות</p>
+        </div>
+    </footer>
+</body>
+</html>
