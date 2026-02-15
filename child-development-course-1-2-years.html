@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>קורס התפתחות הילד | גילאי שנה עד שנתיים | תהילה נטוביץ'</title>
+    <meta name="description" content="קורס מקצועי בהתפתחות הילד לגילאי שנה עד שנתיים עם תהילה נטוביץ', קלינאית מנוסה בעלת 14 שנות ותק ותואר שני בהתפתחות הילד">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 18px 40px;
+            font-size: 20px;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .cta-button:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+        }
+
+        /* Content Sections */
+        .section {
+            background: white;
+            padding: 60px 0;
+        }
+
+        .section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #667eea;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #764ba2;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .credentials {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .credentials h4 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .credentials ul {
+            list-style: none;
+        }
+
+        .credentials li {
+            padding: 10px 0;
+            font-size: 18px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .credentials li:last-child {
+            border-bottom: none;
+        }
+
+        .credentials li:before {
+            content: "✓ ";
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        /* Course Content */
+        .course-topics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .topic-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+
+        .topic-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .topic-card p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .topic-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .benefit-icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .benefit-item h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #764ba2;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .testimonial:before {
+            content: "״";
+            font-size: 60px;
+            color: #667eea;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            opacity: 0.3;
+        }
+
+        .testimonial p {
+            font-size: 16px;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #764ba2;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: white;
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 22px;
+            margin-bottom: 40px;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .course-topics,
+            .benefits,
+            .testimonials {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">תהילה נטוביץ' | התפתחות הילד</div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>קורס התפתחות הילד</h1>
+            <h2>גילאי שנה עד שנתיים</h2>
+            <p>גלי את הסודות להתפתחות אופטימלית של ילדך בשנים המכריעות הללו</p>
+            <a href="#register" class="cta-button">הרשמה לקורס</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>על המרצה</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>תהילה נטוביץ'</h3>
+                    <p>קלינאית מומחית בהתפתחות הילד עם ניסיון עשיר של 14 שנים בתחום.</p>
+                    <p>תהילה מלווה הורים וילדים בתהליכי התפתחות ומספקת כלים מעשיים להורים לתמיכה אופטימלית בהתפתחות ילדיהם.</p>
+                    <p>בעלת גישה חמה ומקצועית המשלבת ידע אקדמי עדכני עם ניסיון קליני עשיר.</p>
+                </div>
+                <div class="credentials">
+                    <h4>הכשרה והסמכות</h4>
+                    <ul>
+                        <li>14 שנות ניסיון קליני</li>
+                        <li>תואר שני (M.A.) בהתפתחות הילד</li>
+                        <li>בוגרת החוג הבין-תחומי באוניברסיטת חיפה</li>
+                        <li>התמחות בגילאי רך (0-3 שנים)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>מה נלמד בקורס?</h2>
+            <div class="course-topics">
+                <div class="topic-card">
+                    <div class="topic-icon">🧠</div>
+                    <h3>התפתחות קוגניטיטיבית</h3>
+                    <p>הבנת תהליכי חשיבה, למידה ופתרון בעיות בגילאי שנה עד שנתיים</p>
+                </div>
+                <div class="topic-card">
+                    <div class="topic-icon">💬</div>
+                    <h3>התפתחות שפה ותקשורת</h3>
+                    <p>דרכים לעידוד התפתחות השפה והתקשורת, מילים ראשונות ומשפטים</p>
+                </div>
+                <div class="topic-card">
+                    <div class="topic-icon">🤸</div>
+                    <h3>התפתחות מוטורית</h3>
+                    <p>ציוני דרך במוטוריקה גסה ועדינה, הליכה, ריצה ותפיסת אובייקטים</p>
+                </div>
+                <div class="topic-card">
+                    <div class="topic-icon">❤️</div>
+                    <h3>התפתחות רגשית וחברתית</h3>
+                    <p>טיפוח אינטליגנציה רגשית, יצירת קשרים חברתיים ומשחק אינטראקטיבי</p>
+                </div>
+                <div class="topic-card">
+                    <div class="topic-icon">🍎</div>
+                    <h3>תזונה ושינה</h3>
+                    <p>הרגלי אכילה בריאים, מעבר לאוכל מוצק ויצירת שגרת שינה איכותית</p>
+                </div>
+                <div class="topic-card">
+                    <div class="topic-icon">👨‍👩‍👧</div>
+                    <h3>התנהגות וגבולות</h3>
+                    <p>הבנת התנהגויות טיפוסיות, הצבת גבולות בריאים וטיפול בהתקפי זעם</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>למה להצטרף לקורס?</h2>
+            <div class="benefits">
+                <div class="benefit-item">
+                    <div class="benefit-icon">📚</div>
+                    <h3>ידע מבוסס מחקר</h3>
+                    <p>תוכן מקצועי המבוסס על מחקרים עדכניים בתחום התפתחות הילד</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🛠️</div>
+                    <h3>כלים מעשיים</h3>
+                    <p>טכניקות ואסטרטגיות ליישום מיידי בחיי היום-יום</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">👥</div>
+                    <h3>קהילת הורים</h3>
+                    <p>הזדמנות להיפגש ולשתף עם הורים אחרים באותו שלב</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💡</div>
+                    <h3>תובנות אישיות</h3>
+                    <p>הבנה מעמיקה של הילד הייחודי שלכם והתאמת הגישה לצרכיו</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>מה אומרים הורים שהשתתפו</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p>הקורס של תהילה שינה לנו את ההורות. הבנו סוף סוף מה הבן שלנו עובר והצלחנו לתמוך בו הרבה יותר טוב.</p>
+                    <div class="testimonial-author">— שרה כהן, אמא לאיתי בן שנה וחצי</div>
+                </div>
+                <div class="testimonial">
+                    <p>תהילה מקצועית ומקסימה. הידע שקיבלנו עזר לנו להתמודד עם התקפי זעם ולהבין את השלבים שהילדה שלנו עוברת.</p>
+                    <div class="testimonial-author">— דוד ורחל לוי, הורים לנועה בת שנתיים</div>
+                </div>
+                <div class="testimonial">
+                    <p>הקורס נתן לי ביטחון והבנה עמוקה יותר של מה חשוב באמת בגיל הזה. מומלץ בחום!</p>
+                    <div class="testimonial-author">— מיכל אברהם, אמא ליעל בת 14 חודשים</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="register">
+        <div class="container">
+            <h2>מוכנים להצטרף?</h2>
+            <p>הצטרפו לקורס ותקבלו כלים מקצועיים לליווי הילד שלכם</p>
+            <a href="mailto:tehila@example.com?subject=הרשמה לקורס התפתחות הילד" class="cta-button">צרו קשר להרשמה</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p><strong>תהילה נטוביץ' - קלינאית מומחית בהתפתחות הילד</strong></p>
+            <p>בוגרת תואר שני בהתפתחות הילד | החוג הבין-תחומי | אוניברסיטת חיפה</p>
+            <p>14 שנות ניסיון קליני</p>
+            <p style="margin-top: 20px;">© 2026 כל הזכויות שמורות</p>
+        </div>
+    </footer>
+</body>
+</html>
